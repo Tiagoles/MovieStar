@@ -6,7 +6,10 @@ include_once("dao/MovieDAO.php");
 $User = new User();
 $Message = new Message($BASE_URL);
 $UserDAO = new UserDAOMysql($conn, $BASE_URL);
-$UserData = $UserDAO->verifyToken(true);
+$UserData = $UserDAO->verifyToken();
+if($UserData == true){
+    include("SessionDestroy.php");
+}
 $MovieDAO = new MovieDAOMySql($BASE_URL, $conn);
 $UserMovies = $MovieDAO->getMoviesByUserId($UserData->id);
 

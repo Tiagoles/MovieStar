@@ -5,7 +5,6 @@ include_once('Models/User.php');
 include_once('dao/UserDAO.php');
 include_once('Models/Message.php');
 
-
 $Message = new Message($BASE_URL);
 $UserDao = new UserDAOMysql($conn, $BASE_URL);
 $type = filter_input(INPUT_POST, 'type');
@@ -22,13 +21,13 @@ if ($type === 'register') {
 
                 $userToken = $user->generateToken();
                 $finalPassword = $user->generatePassword($password);
-                
+
                 $user->name = strtolower($name);
                 $user->lastname = strtolower($lastname);
                 $user->email = strtolower($email);
                 $user->password = $finalPassword;
                 $user->token = $userToken;
-                
+
                 $auth = true;
 
                 $UserDao->create($user, $auth);
@@ -44,7 +43,7 @@ if ($type === 'register') {
 } else if ($type === 'login') {
     $email = filter_input(INPUT_POST, 'email');
     $password = filter_input(INPUT_POST, 'password');
-    if($UserDao->authenticateUser($email, $password)){
+    if ($UserDao->authenticateUser($email, $password)) {
         $Message->setMessage("Seja bem-vindo!", "alert-success", "editProfile.php");
     } else {
         $Message->SetMessage('Email ou senha incorreta. Tente novamente.', 'alert-danger', 'back');

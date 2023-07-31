@@ -27,6 +27,7 @@ $UserData = $userDAO->verifyToken();
     <link rel="stylesheet" href="./css/style.css">
     <script src="<?= $BASE_URL ?>js/Auth.js"></script>
     <script src="<?= $BASE_URL ?>js/Dashboard.js"></script>
+    <script src="./js/Search.js"></script>
 </head>
 <header>
     <nav id="main-navbar" class="navbar navbar-expand-lg">
@@ -38,9 +39,9 @@ $UserData = $userDAO->verifyToken();
             <i class="fas fa-bars"></i>
         </button>
 
-        <form action="#" method="get" id="search-form" class="form-inline my-2 my-lg-0">
-            <input type="text" name="q" id="search" class="form-control mr-sm-2" type="search" placeholder="Buscar Filmes" aria-label="search">
-            <button class="btn my-2 my-sm-0" type="submit">
+        <form action="search.php" method="post" id="search-form" class="form-inline my-2 my-lg-0">
+            <input type="text" name="search" id="search" class="form-control mr-sm-2" type="search" placeholder="Buscar Filmes" aria-label="search">
+            <button class="btn my-2 my-sm-0" type="submit" id="ButtonSearchMovies">
                 <i class="fas fa-search text-dark"></i>
             </button>
         </form>
@@ -92,3 +93,4 @@ if (!empty($flassMessage['msg'])) {
 <?php
 }
 ?>
+ 
