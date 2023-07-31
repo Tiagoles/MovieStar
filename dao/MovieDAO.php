@@ -97,10 +97,22 @@ class MovieDAOMySql implements MovieDAOInterface
     function get_youtube_id_from_url($link)
     {
         preg_match('/(http(s|):|)\/\/(www\.|)yout(.*?)\/(embed\/|watch.*?v=|)([a-z_A-Z0-9\-]{11})/i', $link, $results);
-        return $results[6]; 
+        return $results[6];
     }
     public function findByTitle($title)
-    {
+    {   
+        $Movies = array();
+        $title = "%".$title."%";
+        $stmt = $this->conn->prepare("SELECT * FROM MOVIES WHERE TITLE LIKE :TITLE");
+        $stmt->bindParam(":TITLE", $title);
+        $stmt->execute();
+        if ($stmt->rowCount() > 0) {
+            $MoviesArray = $stmt->fetchAll();
+            foreach ($MoviesArray as $Movie) {
+                $Movies[] = $this->buildMovie($Movie);
+            }
+        }
+        return $Movies;
     }
     public function create(Movie $movie)
     {
@@ -128,13 +140,13 @@ class MovieDAOMySql implements MovieDAOInterface
                                     IMAGE = :IMG, TRAILER = :TRAILER,
                                     CATEGORY = :CATEG, LENGTH = :LEN WHERE ID = :ID");
         $stmt->execute(array(
-            ":TITLE" =>strtolower($movie->title),
+            ":TITLE" => strtolower($movie->title),
             ":DESC" => strtolower($movie->description),
             ":IMG" => $movie->image,
             ":TRAILER" => $movie->trailer,
             ":CATEG" => strtolower($movie->category),
             ":LEN" => strtolower($movie->length),
-            ":ID" =>$movie->id
+            ":ID" => $movie->id
         ));
         $this->message->setMessage("Filme atualizado com sucesso!", "alert-success", "index.php");
     }

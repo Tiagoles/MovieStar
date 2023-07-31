@@ -6,6 +6,9 @@ include_once("url.php");
 $User = new User();
 $UserDAO = new UserDAOMysql($conn, $BASE_URL);
 $UserData = $UserDAO->verifyToken(true);
+if($UserData){
+    include("SessionDestroy.php");
+}
 ?>
 <div class="container-fluid" id="main-container">
     <div class="offset-md-4 col-md-4 new-movie-container">

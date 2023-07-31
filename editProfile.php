@@ -5,10 +5,13 @@ include_once("database.php");
 include_once("url.php");
 $user = new User();
 $UserDAO = new UserDAOMysql($conn, $BASE_URL);
-$userData = $UserDAO->verifyToken(true);
-$fullName = $user->GetFullname($userData);
-if (empty($userData->image)) {
-    $userData->image = "user.png";
+$UserData = $UserDAO->verifyToken();
+if($UserData){
+    include("SessionDestroy.php");
+}
+$fullName = $user->GetFullname($UserData);
+if (empty($UserData->image)) {
+    $UserData->image = "user.png";
 }
 ?>
 
@@ -24,19 +27,19 @@ if (empty($userData->image)) {
 
                         <div class="col-auto">
                             <label for="name" class="col-form-label">Nome</label>
-                            <input type="text" id="name" name="name" class="form-control" value="<?= ucfirst($userData->name) ?>">
+                            <input type="text" id="name" name="name" class="form-control" value="<?= ucfirst($UserData->name) ?>">
                         </div>
 
 
                         <div class="col-auto">
                             <label for="lastname" class="col-form-label">Sobrenome</label>
-                            <input type="text" id="lastname" name="lastname" class="form-control" value="<?= ucfirst($userData->lastname) ?>">
+                            <input type="text" id="lastname" name="lastname" class="form-control" value="<?= ucfirst($UserData->lastname) ?>">
                         </div>
 
 
                         <div class="col-auto">
                             <label for="lastname" class="col-form-label">Email</label>
-                            <input type="email" id="email" name="email" class="form-control disabled" readonly value="<?= $userData->email ?>">
+                            <input type="email" id="email" name="email" class="form-control disabled" readonly value="<?= $UserData->email ?>">
                         </div>
                         <div id="BtnChangeContainer" class="d-flex justify-content-end">
                             <input type="submit" value="Alterar" class="mt-1 btn btn-card">
@@ -44,11 +47,11 @@ if (empty($userData->image)) {
 
                     </div>
                     <div class="ms-5 col-md-3" id="containerImgBio">
-                        <div id="profile-img-container" style="background-image: url('<?= $BASE_URL ?>img/users/<?= $userData->image ?>');"></div>
+                        <div id="profile-img-container" style="background-image: url('<?= $BASE_URL ?>img/users/<?= $UserData->image ?>');"></div>
                         <label for="image">Foto de perfil:</label>
                         <input type="file" class="form-control form-control-sm" id="image" name="image">
                         <div class="mt-1">
-                            <textarea class="form-control" name="bio" id="bio" cols="" rows="6" placeholder="Conte sobre você..."><?= ucfirst($userData->bio) ?></textarea>
+                            <textarea class="form-control" name="bio" id="bio" cols="" rows="6" placeholder="Conte sobre você..."><?= ucfirst($UserData->bio) ?></textarea>
                         </div>
                     </div>
                 </div>
@@ -60,7 +63,7 @@ if (empty($userData->image)) {
                             <h2>Alteração de senha</h2>
                             <p class="page-description">Digite a nova senha e confirme:</p>
                             <input type="hidden" name="type" value="changepassword">
-                            <input type="hidden" name="id" value="<?=$userData->id?>">
+                            <input type="hidden" name="id" value="<?=$UserData->id?>">
                             <label for="password">Senha</label>
                             <input type="password" class="form-control" name="password" id="password" placeholder="Digite a sua nova senha">
                         </div>

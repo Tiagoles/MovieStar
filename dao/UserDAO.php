@@ -205,6 +205,11 @@ class UserDAOMysql implements UserDAOInterface
     $_SESSION['token'] = '';
     $this->message->SetMessage("Logout feito com sucesso!", "alert-success", "index.php");
   }
+  public function destroyTokenSessionActivity()
+  {
+    $_SESSION['token'] = '';
+    $this->message->SetMessage("Sessao expirada. Faça a autenticação para obter acesso.", "alert-danger", "index.php");
+  }
 
   public function changePassword(User $user)
   {

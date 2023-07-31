@@ -31,5 +31,4 @@ class Message {
         $_SESSION['msg'] = '';
         $_SESSION['type'] = '';
     }
-
 }

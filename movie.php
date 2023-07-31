@@ -10,6 +10,9 @@ $Movie;
 $MovieDAO = new MovieDAOMySql($BASE_URL, $conn);
 $UserDAO = new UserDAOMysql($conn, $BASE_URL);
 $UserData = $UserDAO->verifyToken();
+if($UserData == true){
+    include("SessionDestroy.php");
+}
 $ReviewDAO = new ReviewDAOMysql($conn, $BASE_URL);
 if (empty($id)) {
     $message->SetMessage("Filme não encontrado!", "alert-danger", "index.php");
@@ -40,9 +43,9 @@ $LinkTrailerUpdated =  $MovieDAO->get_youtube_id_from_url($LinkTrailerDb);
             <p class="movie-details">
                 <span>Duração:<?= " " . $Movie->length ?></span>
                 <span class="pipe"></span>
-                <span>Categoria:<?= " " . ucfirst($Movie->category) ?></span>
+                <span>Categoria:<?= " " . ucfirst($Movie->category)?></span>
                 <span class="pipe"></span>
-                <span><i class="fas fa-star"></i><?= $Movie->rating  ?></span>
+                <span><i class="fas fa-star"></i><?= $Movie->rating ?></span>
             </p>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/<?= $LinkTrailerUpdated ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             <p><?= ucfirst($Movie->description) ?></p>
@@ -93,7 +96,7 @@ $LinkTrailerUpdated =  $MovieDAO->get_youtube_id_from_url($LinkTrailerDb);
             <p class="empty-list">Ainda não há comentários para esse filme.</p>
         <?php
         } else {
-            
+
             foreach ($ReviewData as $Review) {
                 include("Templates/userReview.php");
             }
