@@ -1,0 +1,656 @@
+document,
+body {
+    overflow-x: hidden;
+    background: #000;
+    color: #ccc;
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: #000;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #f5c518;
+    border-radius: 5px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    border-color: #f5c518;
+}
+input.form-control, textarea.form-control, select.form-select{
+    box-shadow: none !important;
+    outline: none !important;
+    border: none !important;
+}
+
+
+.navbar-brand {
+    position: relative;
+}
+
+#logo {
+    width: 50px;
+}
+
+#moviestar-title {
+    color: #ffffff;
+    position: absolute;
+    bottom: -2px;
+    left: 55px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#main-navbar {
+    background-color: #121212;
+}
+
+#search-form {
+    margin: 0 auto;
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 5px;
+    width: 50%;
+    margin-left: 180px;
+}
+
+#search-form .form-control {
+    border: none;
+    box-shadow: none;
+}
+
+#navbar {
+    min-width: 30%;
+}
+
+.navbar-nav {
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.nav-item a {
+    color: #fff;
+    transition: .5s;
+}
+
+.nav-item a:hover {
+    color: #8a8a8a;
+}
+
+.nav-item a:active {
+    color: #fff;
+}
+
+.nav-area-user {
+    letter-spacing: 1.5px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.row-alert {
+    position: relative;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+}
+
+.row-alert p {
+    display: flex;
+    padding: 0;
+    justify-content: center;
+}
+
+button[aria-label="Close"] {
+    box-shadow: none !important;
+}
+
+#ButtonHideMsg {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+
+#main-container {
+    background: #000;
+    color: #fff;
+    min-height: 65vh;
+}
+
+
+
+.row {
+    align-items: center;
+}
+
+#auth-row {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+#login-container input,
+#register-container input {
+    margin-top: 15px;
+
+}
+
+#login-container h2,
+#register-container h2 {
+    text-align: center;
+    border-bottom: 2px solid #f5c518;
+    width: 200px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+#login-container form,
+#register-container form {
+    max-width: 400px;
+    margin: 30px auto;
+
+}
+
+.or {
+    display: block;
+    text-align: center;
+}
+
+#button_Login,
+#button_Register {
+    display: block;
+    margin: 0 auto 5px;
+    border: none;
+}
+
+#button_Login:hover,
+#button_Register:hover {
+    background-color: #0d0d0d;
+}
+
+.btn-card {
+    color: #000;
+    background-color: #f5c518;
+    border: 2px solid #f5c518;
+    width: 50%;
+    margin-left: 100px;
+    transition: .5s;
+}
+
+.btn-card:hover {
+    background-color: transparent;
+    color: #f5c518;
+    border-color: #f5c518;
+}
+
+.section-title, .modal-title{
+    font-size: 24px;
+    border-left: 4px solid #f5c518;
+    padding-left: 12px;
+    margin-top: 25px;
+}
+.modal-title{
+    margin-top: 0;
+}
+ 
+
+.section-description {
+    color: #ccc;
+    font-size: 18px;
+}
+
+.movies-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+
+.movie-card {
+    background-color: #1a1a1a;
+    width: 18%;
+    margin: 0 1% 30px 1%;
+}
+
+.card-img-top {
+    height: 300px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.card-title {
+    height: 3rem;
+}
+
+.card-title a {
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.fas.fa-star {
+    color: #f5c518;
+
+}
+
+.rating {
+    color: #ccc;
+}
+
+.rate-btn {
+    margin-bottom: 15px;
+    background: #5799ef;
+    color: #444;
+    border-color: #5799ef;
+    width: 100%;
+    font-weight: bold;
+    transition: .5s;
+}
+
+.rate-btn:hover {
+    background-color: #444;
+}
+
+.card-body .btn-card {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.empty-list {
+    text-align: center;
+    font-size: 18px;
+    width: 100%;
+    font-weight: bold;
+}
+
+
+
+/*EDIT PROFILE*/
+#main-container-edit {
+    background: #000;
+    color: #fff;
+    height: 85vh;
+}
+
+.page-description {
+    color: #999;
+}
+
+#profile-img-container, .profile-image-container {
+    width: 150px;
+    height: 150px;
+    border: 6px solid #f5c518;
+    border-radius: 100%;
+    background-size: cover;
+    background-position: center;
+    margin: 15px auto;
+}
+.profile-image-container{
+    width: 80px;
+    height: 70px;
+}
+
+#add-movie-container .btn-card,
+#review-form .btn-card {
+    width: auto;
+}
+
+.disabled {
+    background-color: #ccc;
+
+}
+
+/*EDIT PROFILE*/
+
+
+/*Profile*/
+
+.profile-container{
+    display: flex;
+    justify-content: center;
+}
+.profile-container #profile-img-container{
+    margin: 20px auto;
+}
+.about-title{
+    color: #fff;
+}
+.added-movies-container, .about-container{
+    padding-top: 20px;
+}
+.about-container{
+    text-align: center;
+    background-color: #1e1e1e;
+    border-bottom: 2px solid #ccc;
+}
+.profile-description{
+    max-width: 500px;
+    margin: 20px auto;
+}
+.added-movies-container{
+    padding:15px;
+}
+.added-movies-container .movie-card{
+    width: 28%;
+}
+
+
+/*Profile*/
+
+
+
+/*NewMovie*/
+#main-container-movie {
+    background: #000;
+    color: #fff;
+    height: 85vh;
+}
+
+.new-movie-container {
+    text-align: center;
+}
+
+#add-movie-form {
+    text-align: left;
+}
+
+.movie-image-container {
+    height: 400px;
+    min-width: 200px;
+    background-position: center;
+    background-size: cover;
+}
+
+.page-title::after {
+    content: "";
+    width: 300px;
+    border-bottom: 2px solid #f5c518;
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+input[type="submit"][value="Enviar Filme"] {
+    margin-top: 10px;
+}
+
+div#ContainerButtonNewMovie {
+    display: flex;
+    justify-content: center;
+    margin-right: 100px;
+}
+
+/*NewMovie*/
+
+
+/*MOVIE*/
+
+#main-container #movie-container {
+    text-align: center;
+}
+
+h1.page-title {
+    text-align: center;
+}
+
+.movie-details {
+    margin: 25px;
+}
+
+.pipe {
+    border: 1px solid #333;
+    margin: 0 10px;
+}
+.movie-image-container{
+    margin-top: 15px;
+  height: 550px;
+}
+
+#reviews-title {
+    margin-left: 25px;
+    margin-bottom: 25px;
+}
+#review-form{
+    display: inline-block;
+    width: 100%;
+}
+#review-form-container {
+    border: 1px solid #333;
+    border-radius: 5px;
+    margin: 0 auto;
+    background: #333;
+    padding: 20px;
+    padding-bottom:60px;
+}
+ 
+#review-form-container select,
+#review-form-container textarea {
+    width: 50%;
+}
+#review-form-container input[value='Enviar comentário']{
+    margin-top: 10px;
+    position: absolute;
+    left: 0;
+    margin-left: 150px;
+
+ 
+}
+
+#reviews-container {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 4px solid #f5c518;
+}
+
+.review {
+    padding: 20px 6%;
+    border-bottom: 1px solid #333;
+}
+
+.author-details-container {
+    margin-right: 5px;
+    padding-top: 20px;
+    display: inline-block;
+    position: relative;
+}
+.author-name a {
+    color: #f5c518;
+    font-size: 20px;
+    text-decoration: none;
+}
+.author-name a:hover{
+    text-decoration: underline;
+}
+.comment-title{
+    color: #999;
+}
+.comment{
+    margin-left: 35px;
+}
+
+
+
+/*MOVIE*/
+
+
+/*DASHBOARD*/
+#add-movie-container {
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: end;
+}
+
+.fas.fa-plus {
+    font-weight: normal;
+}
+
+#add-movie-container a {
+    transition: 1s;
+}
+
+table {
+    margin: 0 auto;
+    width: 90vw;
+    text-align: center;
+}
+
+#movies-dashboard #table-dashboard tr {
+    padding: 15px 0;
+    border-bottom: 1px solid white;
+}
+
+ 
+#table-dashboard {
+    background: #000;
+    color: #fff;
+}
+
+.table-movie-title {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: .5s;
+}
+
+.table-movie-title:hover {
+    color: #f5c518;
+}
+
+.action-column {
+    width: 40%;
+}
+
+.action-column form {
+    margin: 10px 0;
+    display: inline-block;
+}
+
+.edit-btn,
+.delete-btn, .submit-btn {
+
+    padding: 5px 10px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin: 10px 10px 10px 0;
+    font-weight: bold;
+    transition: .5s;
+    border: none;
+}
+
+.edit-btn {
+    background: #5799ef;
+    text-decoration: none;
+
+}
+
+.edit-btn:hover {
+    background-color: transparent;
+    color: #5799ef;
+}
+
+.delete-btn {
+    background: #f44336;
+    text-decoration: none;
+}
+
+.delete-btn:hover {
+    background-color: transparent;
+    color: #f44336;
+}
+
+.submit-btn {
+    background: #23bf76;
+    text-decoration: none;
+
+}
+
+.submit-btn:hover {
+    background-color: transparent;
+    color: #23bf76;
+}
+#BtnCloseModalHeader{
+    width: 3em;
+    height: 2.5em;
+    border:none;
+    background-color: transparent;
+}
+
+.modal-content{
+    background: #1d1d1d;
+}
+.label-modal{
+    display: flex;
+    justify-content: start;
+}
+
+
+/*DASHBOARD*/
+#footer {
+    background-color: #000000;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+#social-container ul,
+#footer-links-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.social {
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    transition: .5s;
+    line-height: 3;
+}
+
+.social:hover {
+    background-color: #333;
+}
+
+.social,
+.otherPages {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.social i {
+    color: #ffffff;
+    font-size: 25px;
+}
+
+#footer-links-container {
+    margin: 30px 0;
+}
+
+.otherPages a {
+    color: #fff;
+    text-decoration: none;
+    transition: .5s;
+}
+
+.otherPages a:hover {
+    color: #8a8a8a;
+}
+
+.otherPages a:active {
+    color: #fff;
+}
+
+textarea {
+    resize: none;
+}
+.form-control{
+    outline: 0;
+ 
+}
