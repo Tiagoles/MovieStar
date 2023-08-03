@@ -9,8 +9,8 @@ $id = filter_input(INPUT_GET, "id");
 $Movie;
 $MovieDAO = new MovieDAOMySql($BASE_URL, $conn);
 $UserDAO = new UserDAOMysql($conn, $BASE_URL);
-$UserData = $UserDAO->verifyToken();
-if($UserData == true){
+$UserData = $UserDAO->verifyToken(true);
+if ($UserData == true) {
     include("SessionDestroy.php");
 }
 $ReviewDAO = new ReviewDAOMysql($conn, $BASE_URL);
@@ -43,7 +43,7 @@ $LinkTrailerUpdated =  $MovieDAO->get_youtube_id_from_url($LinkTrailerDb);
             <p class="movie-details">
                 <span>Duração:<?= " " . $Movie->length ?></span>
                 <span class="pipe"></span>
-                <span>Categoria:<?= " " . ucfirst($Movie->category)?></span>
+                <span>Categoria:<?= " " . ucfirst($Movie->category) ?></span>
                 <span class="pipe"></span>
                 <span><i class="fas fa-star"></i><?= $Movie->rating ?></span>
             </p>
@@ -84,9 +84,7 @@ $LinkTrailerUpdated =  $MovieDAO->get_youtube_id_from_url($LinkTrailerDb);
                         <label for="review">Seu comentário:</label>
                         <textarea name="review" id="review" rows="3" placeholder="Comente para os usuários sua opinião..." class="form-control"></textarea>
                     </div>
-                    <div class="form-group" id="ContainerSendComment">
                         <input type="submit" class="btn btn-card" value="Enviar comentário">
-                    </div>
                 </form>
             </div>
         <?php

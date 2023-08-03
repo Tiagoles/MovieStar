@@ -19,8 +19,6 @@ $FullName = $User->getFullName($Review->user);
             </h4>
             <p id="note"><i class="fas fa-star"></i><?=$Review->rating?></p>
         </div>
-        <div class="col-md-3 comment">
-            <p><?=$Review->review?></p>
-        </div>
+         <p><?=$Review->review?></p>
     </div>
 </div>
