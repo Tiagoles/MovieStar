@@ -30,13 +30,14 @@ $UserData = $userDAO->verifyToken();
     <script src="./js/Search.js"></script>
 </head>
 <header>
-    <nav id="main-navbar" class="navbar navbar-expand-lg">
+    <nav id="main-navbar" class="navbar navbar-expand-md navbar-light">
         <a href="./index.php" class="navbar-brand">
             <img src="./img/logo.svg" alt="MovieStar" id="logo">
             <span id="moviestar-title">MovieStar</span>
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fas fa-bars"></i>
+
+        <button  class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>   
         </button>
 
         <form action="search.php" method="post" id="search-form" class="form-inline my-2 my-lg-0">
@@ -83,14 +84,11 @@ if (!empty($flassMessage['msg'])) {
 ?>
     <div class="row row-alert">
         <div class="col-4 mt-2 alert <?= $flassMessage['type'] ?> alert-dismissible fade show" role="alert" id="container-alert">
-            <!-- <div class="" > -->
             <p class="text-center"><?= $flassMessage['msg'] ?></p>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            <!-- </div> -->
         </div>
     </div>
 
 <?php
 }
 ?>
- 
