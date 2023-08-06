@@ -51,5 +51,5 @@
 </body>
  
 <?php
-    include("./Templates/footer.php")
+    include("./Templates/footer.php");
 ?>
