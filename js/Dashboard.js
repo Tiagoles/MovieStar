@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function ShowTextLink(obj) {
         let link = obj;
         link.innerText = "Adicionar filme";
-        link.classList.remove("fas", "fa-plus")
+        link.classList.remove("fas", "fa-plus");
     };
     function HiddenTextLink(obj) {
         let link = obj;

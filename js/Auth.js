@@ -36,6 +36,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 5000);
     }
 
-    ClearMsgAlert(AlertContainer[0])
+    ClearMsgAlert(AlertContainer[0]);
 
 });

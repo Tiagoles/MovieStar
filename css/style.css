@@ -682,7 +682,7 @@ textarea {
 
 @media (max-width:450px) {
     #main-container {
-        padding: 20px
+        padding: 20px    
     }
 
     #search-form {
